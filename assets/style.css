@@ -1302,6 +1302,228 @@ h1.split.is-visible .w > span { transform: none; }
 @keyframes vt-out { to { opacity: 0; transform: translateY(-10px); } }
 @keyframes vt-in { from { opacity: 0; transform: translateY(18px); } }
 
+/* ===========================================================
+   CARD "FIRMA" (stile della card Contatti) + ICONE ANIMATE
+   =========================================================== */
+
+.tone-cacao { --tone: linear-gradient(160deg, #4A3B2E, #3C3026 55%, #33281F); --glow: rgba(198, 120, 80, 0.5); --ink: #D9AE74; --acc: #EE9E74; }
+.tone-terra { --tone: linear-gradient(155deg, #B86D44, #9A5534 55%, #874829); --glow: rgba(250, 226, 196, 0.34); --ink: #FCEBD6; --acc: #F6C987; }
+.tone-bark  { --tone: linear-gradient(160deg, #5B4834, #45372A 55%, #3A2E23); --glow: rgba(210, 165, 108, 0.45); --ink: #E4BC84; --acc: #F3E7D5; }
+
+/* card scura con alone, anelli e icona */
+.fcard {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 30px 30px;
+  border-radius: var(--radius-lg);
+  background-color: #3C3026;
+  background-image: var(--tone);
+  color: rgba(243, 231, 213, 0.86);
+  box-shadow: 0 2px 6px rgba(60, 48, 38, 0.08), 0 24px 48px -24px rgba(60, 48, 38, 0.55);
+  text-decoration: none;
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.fcard::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 340px; height: 340px;
+  right: -130px; top: -150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow), transparent 68%);
+  transition: transform 0.8s var(--ease), opacity 0.8s ease;
+  opacity: 0.85;
+}
+.fcard::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 220px; height: 220px;
+  right: -80px; bottom: -110px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(243, 231, 213, 0.13);
+  box-shadow: 0 0 0 26px rgba(243, 231, 213, 0.025);
+  transition: transform 0.8s var(--ease);
+}
+.fcard:hover { transform: translateY(-6px); box-shadow: 0 2px 6px rgba(60, 48, 38, 0.08), 0 34px 60px -24px rgba(60, 48, 38, 0.65); }
+.fcard:hover::before { transform: scale(1.25) translate(-20px, 20px); opacity: 1; }
+.fcard:hover::after { transform: scale(1.2); }
+.fcard.tilt:hover {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px);
+  transition: transform 0.15s ease-out, box-shadow 0.5s var(--ease);
+}
+.js .fcard.spot {
+  background-image: radial-gradient(420px circle at var(--x, -1000px) var(--y, -1000px), rgba(250, 226, 196, 0.16), transparent 45%), var(--tone);
+}
+
+.fcard h3 { color: #FBF3E9; font-size: 1.45rem; font-weight: 500; margin-bottom: 10px; }
+.fcard p { margin: 0; flex-grow: 1; }
+.fcard.tone-terra { color: #FDF4EA; }
+.fnum {
+  position: absolute;
+  top: 26px; right: 28px;
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(243, 231, 213, 0.4);
+}
+.fcard .explore-link { margin-top: 26px; color: var(--ink); }
+
+/* disco dell'icona con anello tratteggiato che ruota */
+.ficon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 96px; height: 96px;
+  margin-bottom: 26px;
+  border-radius: 50%;
+  color: var(--ink);
+  background: radial-gradient(circle at 35% 30%, rgba(243, 231, 213, 0.16), rgba(243, 231, 213, 0.05));
+  box-shadow: inset 0 0 0 1px rgba(243, 231, 213, 0.16);
+  transition: box-shadow 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.ficon::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  border: 1px dashed rgba(243, 231, 213, 0.28);
+  animation: spin 24s linear infinite;
+}
+.ficon svg { width: 66px; height: 66px; }
+.fcard:hover .ficon { transform: scale(1.06); }
+
+/* icone a due toni */
+.ico { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; overflow: visible; }
+.ico * { transform-box: fill-box; transform-origin: center; }
+.ico .f { fill: currentColor; opacity: 0.18; stroke: none; }
+.ico .a { stroke: var(--acc); }
+.ico .af { fill: var(--acc); stroke: none; }
+.ico .dot { fill: currentColor; stroke: none; }
+.ico .knob { fill: var(--acc); stroke: currentColor; }
+
+.ico .walk circle { animation: blink 1.8s ease-in-out infinite; }
+.ico .walk circle:nth-child(2) { animation-delay: 0.25s; }
+.ico .walk circle:nth-child(3) { animation-delay: 0.5s; }
+.ico .beat { animation: beat 1.8s ease-in-out infinite; }
+.ico .leaf { transform-origin: bottom center; animation: sway 3.2s ease-in-out infinite alternate; }
+.ico .leaf-2 { animation-delay: -1.6s; }
+.ico .hand { transform-box: view-box; transform-origin: 32px 34px; animation: spin 7s linear infinite; }
+.ico .hand-2 { transform-box: view-box; transform-origin: 32px 34px; animation: spin 40s linear infinite; }
+.ico .badge { animation: pop 3.2s ease-in-out infinite; }
+.ico .float { animation: float 3s ease-in-out infinite; }
+.ico .wave-1, .ico .ray { animation: blink 2s ease-in-out infinite; }
+.ico .wave-2 { animation: blink 2s ease-in-out 0.35s infinite; }
+.ico .ray:nth-of-type(2) { animation-delay: 0.3s; }
+.ico .ray:nth-of-type(3) { animation-delay: 0.6s; }
+.ico .drop { animation: drop 2.6s ease-in infinite; }
+.ico .drop-2 { animation-delay: 1.3s; }
+.ico .pulse { animation: pulse-pt 2.2s ease-in-out infinite; }
+.ico .pulse-2 { animation-delay: 0.7s; }
+.ico .pulse-3 { animation-delay: 1.4s; }
+.ico .petal-l { transform-box: view-box; transform-origin: 32px 42px; animation: open-l 4s ease-in-out infinite alternate; }
+.ico .petal-r { transform-box: view-box; transform-origin: 32px 42px; animation: open-r 4s ease-in-out infinite alternate; }
+.ico .knob-1 { animation: slide-a 4.5s ease-in-out infinite alternate; }
+.ico .knob-2 { animation: slide-b 4.5s ease-in-out infinite alternate; }
+.ico .knob-3 { animation: slide-c 4.5s ease-in-out infinite alternate; }
+
+@keyframes blink { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+@keyframes beat { 0%, 100% { transform: scale(1); } 14% { transform: scale(1.16); } 28% { transform: scale(1); } 42% { transform: scale(1.1); } 56% { transform: scale(1); } }
+@keyframes sway { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+@keyframes pop { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.2); } 90% { transform: scale(0.95); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes drop { 0% { transform: translateY(-3px); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(9px); opacity: 0; } }
+@keyframes pulse-pt { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.45); opacity: 0.55; } }
+@keyframes open-l { from { transform: rotate(0); } to { transform: rotate(-8deg); } }
+@keyframes open-r { from { transform: rotate(0); } to { transform: rotate(8deg); } }
+@keyframes slide-a { to { transform: translateX(16px); } }
+@keyframes slide-b { to { transform: translateX(-14px); } }
+@keyframes slide-c { to { transform: translateX(10px); } }
+
+/* le animazioni girano solo quando la card è sullo schermo */
+.js .fcard:not(.in-view) .ico *,
+.js .tcard:not(.in-view) .ico * { animation-play-state: paused; }
+
+/* griglie card */
+.fcard-grid { display: grid; gap: 20px; }
+@media (min-width: 800px) { .fcard-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+
+/* ---------- schede trattamenti (stile scheda profilo) ---------- */
+.tcard {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--paper);
+  box-shadow: 0 2px 6px rgba(60, 48, 38, 0.06), 0 20px 44px -26px rgba(60, 48, 38, 0.45);
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.tcard:hover { transform: translateY(-6px); box-shadow: 0 2px 6px rgba(60, 48, 38, 0.06), 0 32px 60px -26px rgba(60, 48, 38, 0.55); }
+
+.tcard-visual {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: 210px;
+  display: grid;
+  place-items: center;
+  background-color: #3C3026;
+  background-image: var(--tone);
+}
+.tcard-visual::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 320px; height: 320px;
+  right: -110px; top: -150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow), transparent 68%);
+  transition: transform 0.8s var(--ease);
+}
+.tcard-visual::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 200px; height: 200px;
+  left: -90px; bottom: -120px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(243, 231, 213, 0.12);
+}
+.tcard:hover .tcard-visual::before { transform: scale(1.3) translate(-30px, 30px); }
+
+.tcard .ficon {
+  width: 112px; height: 112px;
+  margin: 0;
+  box-shadow: inset 0 0 0 1px rgba(243, 231, 213, 0.16), 0 0 0 20px rgba(243, 231, 213, 0.045), 0 0 0 44px rgba(243, 231, 213, 0.03);
+}
+.tcard:hover .ficon {
+  transform: scale(1.05);
+  box-shadow: inset 0 0 0 1px rgba(243, 231, 213, 0.22), 0 0 0 26px rgba(243, 231, 213, 0.06), 0 0 0 58px rgba(243, 231, 213, 0.035);
+}
+.tcard .ficon svg { width: 76px; height: 76px; }
+.tcard .fnum { top: 20px; right: 22px; }
+
+.tcard-badge {
+  position: absolute;
+  top: 18px; left: 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(250, 244, 234, 0.92);
+  color: var(--accent-ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tcard-body { flex: 1; display: flex; flex-direction: column; padding: 26px 28px 28px; }
+.tcard-body h2 { font-size: 1.32rem; font-weight: 600; line-height: 1.2; margin-bottom: 10px; }
+.tcard-body p { margin: 0 0 20px; flex-grow: 1; color: var(--body-text); }
+.tcard-body .tags span { background: var(--surface); }
+
 /* ---------- animazioni di comparsa ---------- */
 .js .reveal {
   opacity: 0;

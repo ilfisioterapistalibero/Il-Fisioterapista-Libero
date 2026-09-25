@@ -167,6 +167,17 @@
   window.addEventListener('resize', onScroll);
   onScroll();
 
+  // ---------- icone animate: girano solo quando la card è visibile ----------
+  var animCards = document.querySelectorAll('.fcard, .tcard');
+  if ('IntersectionObserver' in window) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle('in-view', e.isIntersecting); });
+    });
+    animCards.forEach(function (el) { vio.observe(el); });
+  } else {
+    animCards.forEach(function (el) { el.classList.add('in-view'); });
+  }
+
   if (reduceMotion || !finePointer) return;
 
   // ---------- profondità che segue il mouse (hero) ----------
