@@ -94,8 +94,11 @@
         <div class="orbit">
           <svg class="orbit-rings" viewBox="0 0 400 400">
             <circle cx="200" cy="200" r="190" class="ring ring-1"/>
-            <circle cx="200" cy="200" r="162" class="ring ring-2"/>
+            <circle cx="200" cy="200" r="162" class="ring ring-2" pathLength="100"/>
+            <circle cx="200" cy="200" r="176" class="ring ring-3" pathLength="100"/>
+            <circle cx="200" cy="200" r="176" class="ring ring-4" pathLength="100"/>
           </svg>
+          <span class="glow" aria-hidden="true"></span>
           <div class="logo-disc">
             <img src="assets/logo.jpg" alt="" width="260" height="310">
           </div>
@@ -113,17 +116,17 @@
   </section>
 
   <!-- NUMERI -->
-  <section class="stats" aria-label="In breve">
+  <section class="stats sheet" aria-label="In breve">
     <div class="container stats-grid">
-      <div class="stat reveal"><strong>13</strong><span>anni di esperienza clinica</span></div>
-      <div class="stat reveal"><strong>110<small>/110</small></strong><span>Laurea a Tor Vergata</span></div>
-      <div class="stat reveal"><strong>100%</strong><span>a domicilio, a Roma</span></div>
+      <div class="stat reveal"><strong><span class="count" data-to="13">13</span></strong><span>anni di esperienza clinica</span></div>
+      <div class="stat reveal"><strong><span class="count" data-to="110">110</span><small>/110</small></strong><span>Laurea a Tor Vergata</span></div>
+      <div class="stat reveal"><strong><span class="count" data-to="100">100</span>%</strong><span>a domicilio, a Roma</span></div>
       <div class="stat reveal"><strong>0 €</strong><span>la prima consulenza telefonica</span></div>
     </div>
   </section>
 
   <!-- MISSIONE -->
-  <section class="section mission">
+  <section class="section mission sheet">
     <div class="container">
       <figure class="quote reveal">
         <svg class="quote-mark" viewBox="0 0 64 48" aria-hidden="true"><path d="M0 48V28C0 12 8 3 24 0l3 6C18 9 14 14 13 22h11v26zm36 0V28c0-16 8-25 24-28l3 6c-9 3-13 8-14 16h11v26z" fill="currentColor"/></svg>
@@ -139,24 +142,24 @@
   </section>
 
   <!-- PERCHÉ A DOMICILIO -->
-  <section class="section section-alt">
+  <section class="section section-alt sheet">
     <div class="container">
       <div class="section-header center reveal">
         <p class="kicker">Perché a domicilio</p>
         <h2>La cura migliore avviene <em>dove vivi.</em></h2>
       </div>
       <div class="benefits-grid">
-        <article class="benefit reveal">
+        <article class="benefit spot reveal">
           <span class="benefit-icon"><svg><use href="assets/icons.svg#i-car"/></svg></span>
           <h3>Zero spostamenti</h3>
           <p>Niente traffico, parcheggi o sale d'attesa. Quando hai dolore o sei in gravidanza, restare a casa fa già parte del trattamento.</p>
         </article>
-        <article class="benefit reveal">
+        <article class="benefit spot reveal">
           <span class="benefit-icon"><svg><use href="assets/icons.svg#i-eye"/></svg></span>
           <h3>Il tuo ambiente reale</h3>
           <p>Vedo come ti muovi ogni giorno, tra i tuoi spazi e le tue abitudini: è lì che nascono le soluzioni che funzionano davvero.</p>
         </article>
-        <article class="benefit reveal">
+        <article class="benefit spot reveal">
           <span class="benefit-icon"><svg><use href="assets/icons.svg#i-clock"/></svg></span>
           <h3>Tempo solo per te</h3>
           <p>Nessuna catena di montaggio: ogni seduta è dedicata interamente a te, con calma, ascolto e attenzione.</p>
@@ -166,13 +169,13 @@
   </section>
 
   <!-- COME FUNZIONA -->
-  <section class="section">
+  <section class="section sheet">
     <div class="container">
       <div class="section-header center reveal">
         <p class="kicker">Come funziona</p>
         <h2>Tre passi, <em>nessun pensiero.</em></h2>
       </div>
-      <ol class="steps">
+      <ol class="steps draw">
         <li class="step reveal">
           <span class="step-num">1</span>
           <h3>Consulenza telefonica gratuita</h3>
@@ -193,26 +196,26 @@
   </section>
 
   <!-- ESPLORA -->
-  <section class="section section-alt">
+  <section class="section section-alt sheet">
     <div class="container">
       <div class="section-header center reveal">
         <p class="kicker">Scopri di più</p>
         <h2>Da dove vuoi <em>iniziare?</em></h2>
       </div>
       <div class="explore-grid">
-        <a href="chi-sono.html" class="explore-card reveal">
+        <a href="chi-sono.html" class="explore-card spot tilt reveal">
           <span class="explore-icon"><svg><use href="assets/icons.svg#i-user"/></svg></span>
           <h3>Chi sono</h3>
           <p>La mia storia, la formazione e perché ho scelto di venire da te.</p>
           <span class="explore-link">Conoscimi<svg><use href="assets/icons.svg#i-arrow"/></svg></span>
         </a>
-        <a href="trattamenti.html" class="explore-card reveal">
+        <a href="trattamenti.html" class="explore-card spot tilt reveal">
           <span class="explore-icon"><svg><use href="assets/icons.svg#i-leaf"/></svg></span>
           <h3>Trattamenti</h3>
           <p>Linfodrenaggio in gravidanza, massaggi, antistress e digitopressione.</p>
           <span class="explore-link">Vedi i trattamenti<svg><use href="assets/icons.svg#i-arrow"/></svg></span>
         </a>
-        <a href="contatti.html" class="explore-card explore-card-dark reveal">
+        <a href="contatti.html" class="explore-card explore-card-dark spot tilt reveal">
           <span class="explore-icon"><svg><use href="assets/icons.svg#i-chat"/></svg></span>
           <h3>Contatti</h3>
           <p>La prima consulenza telefonica è gratuita e senza impegno.</p>
@@ -246,7 +249,7 @@
 </footer>
 
 <div class="sticky-cta" id="sticky-cta">
-  <a href="contatti.html" class="btn btn-primary btn-block">Consulenza gratuita<svg class="btn-arrow"><use href="assets/icons.svg#i-arrow"/></svg></a>
+  <a href="contatti.html" class="btn btn-primary btn-block btn-shine">Consulenza gratuita<svg class="btn-arrow"><use href="assets/icons.svg#i-arrow"/></svg></a>
 </div>
 
 <!-- Cloudflare Web Analytics: incolla qui lo snippet dopo l'attivazione dal pannello Cloudflare -->

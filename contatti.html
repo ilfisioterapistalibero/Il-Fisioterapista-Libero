@@ -69,17 +69,17 @@
 
           <div class="form-field">
             <input type="text" id="nome" name="Nome" required placeholder=" " autocomplete="name">
-            <label for="nome">Nome</label>
+            <label for="nome">Nome</label><span class="field-ok" aria-hidden="true"><svg><use href="assets/icons.svg#i-check"/></svg></span>
           </div>
           <div class="form-field">
-            <input type="tel" id="telefono" name="Telefono" required placeholder=" " autocomplete="tel" inputmode="tel">
-            <label for="telefono">Numero di telefono</label>
+            <input type="tel" id="telefono" name="Telefono" required placeholder=" " autocomplete="tel" inputmode="tel" pattern="[0-9 +]{6,}" title="Inserisci un numero di telefono valido">
+            <label for="telefono">Numero di telefono</label><span class="field-ok" aria-hidden="true"><svg><use href="assets/icons.svg#i-check"/></svg></span>
           </div>
           <label class="checkbox-field">
             <input type="checkbox" required>
             <span>Ho letto e accetto la <a href="privacy.html">privacy policy</a>.</span>
           </label>
-          <button type="submit" class="btn btn-primary btn-block">Prenota la consulenza gratuita<svg class="btn-arrow"><use href="assets/icons.svg#i-arrow"/></svg></button>
+          <button type="submit" class="btn btn-primary btn-block btn-shine">Prenota la consulenza gratuita<svg class="btn-arrow"><use href="assets/icons.svg#i-arrow"/></svg></button>
         </form>
         <div class="form-alt">
           <span>Preferisci scrivere?</span>
