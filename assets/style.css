@@ -1414,7 +1414,7 @@ h1.split.is-visible .w > span { transform: none; }
 .ico .pulse { animation: pulse-pt 2.2s ease-in-out infinite; }
 .ico .pulse-2 { animation-delay: 0.7s; }
 .ico .pulse-3 { animation-delay: 1.4s; }
-.ico .orbit { transform-box: view-box; transform-origin: 32px 15px; animation: spin 18s linear infinite; }
+.ico .orbit { transform-box: view-box; transform-origin: 32px 13.5px; animation: spin 18s linear infinite; }
 .ico .orbit-item { transform-box: view-box; transform-origin: 0 0; animation: spin 18s linear infinite reverse; }
 .ico .ripple { opacity: 0; animation: ripple 3s ease-out infinite; }
 .ico .ripple-2 { animation-delay: 1s; }
