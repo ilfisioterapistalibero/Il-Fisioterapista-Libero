@@ -7,10 +7,12 @@
   --surface: #EFE2CE;
   --title: #3C3026;
   --body-text: #4A3D31;
-  --muted: #8B7A68;
+  --muted: #75604F; /* leggermente più scuro di #8B7A68 per garantire contrasto AA sul testo piccolo */
   --accent: #C67850;
   --accent-dark: #a85f3b;
+  --accent-ink: #8A4A2E; /* variante scura del terracotta, per testo/link su sfondo chiaro: garantisce AA */
   --accent2: #BE8A4A;
+  --accent2-ink: #C79659; /* variante chiara dell'ambra, per testo/link su sfondo scuro: garantisce AA */
   --dark-bg: #3C3026;
   --dark-text: #F3E7D5;
   --radius: 14px;
@@ -54,7 +56,7 @@ body {
 
 img { max-width: 100%; display: block; }
 
-a { color: var(--accent); }
+a { color: var(--accent-ink); }
 
 h1, h2, h3 {
   font-family: 'Fraunces', Georgia, serif;
@@ -72,8 +74,12 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 p { margin: 0 0 1em; }
 
 .accent-word {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 32;
   font-style: italic;
-  color: var(--accent);
+  font-weight: 500;
+  color: var(--accent-ink);
 }
 
 .container {
@@ -128,8 +134,8 @@ p { margin: 0 0 1em; }
   padding: 14px 26px;
   border-radius: 999px;
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.2rem; /* testo "large" per garantire contrasto AA (3:1) su fondo terracotta */
   text-decoration: none;
   border: 2px solid transparent;
   cursor: pointer;
@@ -369,7 +375,7 @@ p { margin: 0 0 1em; }
 
 .card .price {
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-size: 0.95rem;
   margin-top: 4px;
 }
@@ -505,7 +511,7 @@ p { margin: 0 0 1em; }
 }
 
 .site-footer a {
-  color: var(--accent2);
+  color: var(--accent2-ink);
 }
 
 .footer-bottom {
