@@ -1294,13 +1294,6 @@ h1.split.is-visible .w > span { transform: none; }
 .btn.is-loading .btn-arrow { animation: nudge 0.8s ease-in-out infinite; }
 @keyframes nudge { 50% { transform: translateX(6px); } }
 
-/* passaggio morbido tra le pagine */
-@view-transition { navigation: auto; }
-.site-header { view-transition-name: site-header; }
-::view-transition-old(root) { animation: vt-out 0.3s ease both; }
-::view-transition-new(root) { animation: vt-in 0.55s var(--ease) both; }
-@keyframes vt-out { to { opacity: 0; transform: translateY(-10px); } }
-@keyframes vt-in { from { opacity: 0; transform: translateY(18px); } }
 
 /* ===========================================================
    CARD "FIRMA" (stile della card Contatti) + ICONE ANIMATE
@@ -1541,7 +1534,6 @@ h1.split.is-visible .w > span { transform: none; }
     transition-duration: 0.01ms !important;
   }
   .js .reveal { opacity: 1; transform: none; }
-  ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
   .btn-shine::after { display: none; }
 }
 

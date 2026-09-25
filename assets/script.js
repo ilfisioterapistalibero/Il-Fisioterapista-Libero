@@ -25,6 +25,8 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') setMenu(false);
     });
+    // tornando indietro, la pagina non deve restare con il menu aperto e bloccata
+    window.addEventListener('pageshow', function () { setMenu(false); });
   }
 
   // ---------- modulo: stato di invio ----------
@@ -119,6 +121,21 @@
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
     items.forEach(function (el) { io.observe(el); });
+
+    // rete di sicurezza: se un browser (es. quello interno di un'app) non attiva
+    // le comparse, mostra comunque tutto ciò che è sullo schermo
+    var revealVisibleNow = function () {
+      document.querySelectorAll('.reveal:not(.is-visible), .draw:not(.is-visible)').forEach(function (el) {
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-visible');
+      });
+    };
+    setTimeout(revealVisibleNow, 1200);
+    var pending = false;
+    window.addEventListener('scroll', function () {
+      if (pending) return;
+      pending = true;
+      setTimeout(function () { pending = false; revealVisibleNow(); }, 400);
+    }, { passive: true });
   }
 
   // ---------- scorrimento: header, barra di avanzamento, CTA mobile, citazione, parallasse ----------
