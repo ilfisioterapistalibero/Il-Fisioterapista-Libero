@@ -1414,7 +1414,9 @@ h1.split.is-visible .w > span { transform: none; }
 .ico .pulse { animation: pulse-pt 2.2s ease-in-out infinite; }
 .ico .pulse-2 { animation-delay: 0.7s; }
 .ico .pulse-3 { animation-delay: 1.4s; }
-.ico .press { animation: press 1.8s ease-in-out infinite; }
+.ico .palm { transform-box: view-box; transform-origin: 0 0; }
+.ico .orbit { transform-box: view-box; transform-origin: 32px 18px; animation: spin 18s linear infinite; }
+.ico .orbit-item { transform-box: view-box; transform-origin: 0 0; animation: spin 18s linear infinite reverse; }
 .ico .ripple { opacity: 0; animation: ripple 3s ease-out infinite; }
 .ico .ripple-2 { animation-delay: 1s; }
 .ico .ripple-3 { animation-delay: 2s; }
@@ -1431,7 +1433,6 @@ h1.split.is-visible .w > span { transform: none; }
 @keyframes pop { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.2); } 90% { transform: scale(0.95); } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 @keyframes pulse-pt { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.45); opacity: 0.55; } }
-@keyframes press { 50% { transform: translate(-0.8px, 1.4px); } }
 @keyframes ripple { 0% { transform: scale(0.15); opacity: 1; } 100% { transform: scale(1); opacity: 0; } }
 /* loto: bocciolo che sboccia, resta aperto, poi si richiude piano */
 @keyframes bloom-c { 0%, 100% { transform: scale(0.6); } 30%, 82% { transform: none; } }
