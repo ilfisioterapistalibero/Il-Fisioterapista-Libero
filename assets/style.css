@@ -1396,7 +1396,6 @@ h1.split.is-visible .w > span { transform: none; }
 .ico .a { stroke: var(--acc); }
 .ico .af { fill: var(--acc); stroke: none; }
 .ico .dot { fill: currentColor; stroke: none; }
-.ico .knob { fill: var(--acc); stroke: currentColor; }
 
 .ico .walk circle { animation: blink 1.8s ease-in-out infinite; }
 .ico .walk circle:nth-child(2) { animation-delay: 0.25s; }
@@ -1412,29 +1411,34 @@ h1.split.is-visible .w > span { transform: none; }
 .ico .wave-2 { animation: blink 2s ease-in-out 0.35s infinite; }
 .ico .ray:nth-of-type(2) { animation-delay: 0.3s; }
 .ico .ray:nth-of-type(3) { animation-delay: 0.6s; }
-.ico .drop { animation: drop 2.6s ease-in infinite; }
-.ico .drop-2 { animation-delay: 1.3s; }
 .ico .pulse { animation: pulse-pt 2.2s ease-in-out infinite; }
 .ico .pulse-2 { animation-delay: 0.7s; }
 .ico .pulse-3 { animation-delay: 1.4s; }
-.ico .petal-l { transform-box: view-box; transform-origin: 32px 42px; animation: open-l 4s ease-in-out infinite alternate; }
-.ico .petal-r { transform-box: view-box; transform-origin: 32px 42px; animation: open-r 4s ease-in-out infinite alternate; }
-.ico .knob-1 { animation: slide-a 4.5s ease-in-out infinite alternate; }
-.ico .knob-2 { animation: slide-b 4.5s ease-in-out infinite alternate; }
-.ico .knob-3 { animation: slide-c 4.5s ease-in-out infinite alternate; }
+.ico .press { animation: press 1.8s ease-in-out infinite; }
+.ico .ripple { opacity: 0; animation: ripple 3s ease-out infinite; }
+.ico .ripple-2 { animation-delay: 1s; }
+.ico .ripple-3 { animation-delay: 2s; }
+.ico .lotus-c, .ico .lotus-m, .ico .lotus-o { transform-box: view-box; transform-origin: 32px 45px; animation: 7s ease-in-out infinite; }
+.ico .lotus-c { animation-name: bloom-c; }
+.ico .lotus-m.lotus-l { animation-name: bloom-ml; }
+.ico .lotus-m.lotus-r { animation-name: bloom-mr; }
+.ico .lotus-o.lotus-l { animation-name: bloom-ol; }
+.ico .lotus-o.lotus-r { animation-name: bloom-or; }
 
 @keyframes blink { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
 @keyframes beat { 0%, 100% { transform: scale(1); } 14% { transform: scale(1.16); } 28% { transform: scale(1); } 42% { transform: scale(1.1); } 56% { transform: scale(1); } }
 @keyframes sway { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
 @keyframes pop { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.2); } 90% { transform: scale(0.95); } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-@keyframes drop { 0% { transform: translateY(-3px); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(9px); opacity: 0; } }
 @keyframes pulse-pt { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.45); opacity: 0.55; } }
-@keyframes open-l { from { transform: rotate(0); } to { transform: rotate(-8deg); } }
-@keyframes open-r { from { transform: rotate(0); } to { transform: rotate(8deg); } }
-@keyframes slide-a { to { transform: translateX(16px); } }
-@keyframes slide-b { to { transform: translateX(-14px); } }
-@keyframes slide-c { to { transform: translateX(10px); } }
+@keyframes press { 50% { transform: translate(-0.8px, 1.4px); } }
+@keyframes ripple { 0% { transform: scale(0.15); opacity: 1; } 100% { transform: scale(1); opacity: 0; } }
+/* loto: bocciolo che sboccia, resta aperto, poi si richiude piano */
+@keyframes bloom-c { 0%, 100% { transform: scale(0.6); } 30%, 82% { transform: none; } }
+@keyframes bloom-ml { 0%, 8%, 100% { transform: rotate(30deg) scale(0.55); opacity: 0; } 40%, 82% { transform: none; opacity: 1; } }
+@keyframes bloom-mr { 0%, 8%, 100% { transform: rotate(-30deg) scale(0.55); opacity: 0; } 40%, 82% { transform: none; opacity: 1; } }
+@keyframes bloom-ol { 0%, 18%, 100% { transform: rotate(55deg) scale(0.45); opacity: 0; } 52%, 82% { transform: none; opacity: 1; } }
+@keyframes bloom-or { 0%, 18%, 100% { transform: rotate(-55deg) scale(0.45); opacity: 0; } 52%, 82% { transform: none; opacity: 1; } }
 
 /* le animazioni girano solo quando la card è sullo schermo */
 .js .fcard:not(.in-view) .ico *,
@@ -1534,6 +1538,8 @@ h1.split.is-visible .w > span { transform: none; }
     transition-duration: 0.01ms !important;
   }
   .js .reveal { opacity: 1; transform: none; }
+  .ico .lotus-c, .ico .lotus-m, .ico .lotus-o { animation: none !important; }
+  .ico .ripple { animation: none !important; opacity: 0.5; }
   .btn-shine::after { display: none; }
 }
 
