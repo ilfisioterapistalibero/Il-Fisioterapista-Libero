@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Il fisioterapista libero — Fisioterapia a domicilio a Roma | Alessandro Ottaviani</title>
 <meta name="description" content="Fisioterapia e benessere psico-fisico a domicilio a Roma (Pigneto, San Giovanni). Linfodrenaggio in gravidanza, massaggi, trattamenti antistress. Consulenza telefonica gratuita.">
+<meta name="theme-color" content="#F3E7D5">
 
 <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
 <link rel="apple-touch-icon" href="assets/favicon.jpg">
@@ -13,20 +14,22 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Il fisioterapista libero — Fisioterapia a domicilio a Roma">
 <meta property="og:description" content="Fisioterapia e benessere psico-fisico a domicilio a Roma (Pigneto, San Giovanni). Consulenza telefonica gratuita.">
-<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image" content="https://ilfisioterapistalibero.pages.dev/assets/og-image.jpg">
+<meta property="og:url" content="https://ilfisioterapistalibero.pages.dev/">
 <meta property="og:locale" content="it_IT">
 
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Il fisioterapista libero — Fisioterapia a domicilio a Roma">
 <meta name="twitter:description" content="Fisioterapia e benessere psico-fisico a domicilio a Roma (Pigneto, San Giovanni). Consulenza telefonica gratuita.">
-<meta name="twitter:image" content="assets/og-image.jpg">
+<meta name="twitter:image" content="https://ilfisioterapistalibero.pages.dev/assets/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add('js');</script>
 
 <script type="application/ld+json">
 {
@@ -34,6 +37,7 @@
   "@type": "MedicalBusiness",
   "name": "il fisioterapista libero",
   "description": "Fisioterapia e benessere psico-fisico a domicilio a Roma: linfodrenaggio in gravidanza, massaggi decontratturanti, trattamenti antistress e digitopressione.",
+  "url": "https://ilfisioterapistalibero.pages.dev/",
   "telephone": "+393284611118",
   "email": "Ilfisioterapistalibero@gmail.com",
   "areaServed": "Roma, Pigneto, San Giovanni",
@@ -50,175 +54,170 @@
 </head>
 <body>
 
-<a href="#contatti" class="visually-hidden">Vai al modulo di contatto</a>
-
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container header-inner">
-    <a href="#top" class="brand">
-      <img src="assets/logo.jpg" alt="Logo il fisioterapista libero">
-      <span>il fisioterapista libero</span>
+    <a href="index.html" class="brand" aria-current="page">
+      <img src="assets/logo.jpg" alt="" width="44" height="44">
+      <span>il fisioterapista <em>libero</em></span>
     </a>
-    <nav class="main-nav" aria-label="Navigazione principale">
-      <a href="#chi-sono">Chi sono</a>
-      <a href="#trattamenti">Trattamenti</a>
-      <a href="#contatti">Contatti</a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigazione principale">
+      <a href="chi-sono.html">Chi sono</a>
+      <a href="trattamenti.html">Trattamenti</a>
+      <a href="contatti.html">Contatti</a>
+      <a href="contatti.html" class="btn btn-primary btn-sm nav-cta">Consulenza gratuita</a>
     </nav>
-    <div class="header-actions">
-      <a href="#contatti" class="btn btn-primary">Consulenza gratuita</a>
-    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Apri il menu"><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
+<main>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container hero-inner">
-      <img src="assets/logo.jpg" alt="Logo il fisioterapista libero" class="hero-logo">
-      <h1>Il tuo benessere, a casa tua.</h1>
-      <p class="subtitle">Fisioterapia e benessere psico-fisico a domicilio — a Roma, con empatia e metodo.</p>
-      <div class="cta-row">
-        <a href="#contatti" class="btn btn-primary">Richiedi una consulenza gratuita</a>
-        <a href="https://wa.me/393284611118?text=Ciao%20Alessandro%2C%20vorrei%20prenotare%20una%20consulenza%20telefonica%20gratuita." class="btn btn-whatsapp" target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
+    <div class="hero-bg" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow reveal"><span class="dot"></span>Fisioterapia a domicilio · Roma</p>
+        <h1 class="reveal">Il tuo benessere,<br><em>a casa tua.</em></h1>
+        <p class="subtitle reveal">Fisioterapia e benessere psico-fisico direttamente nel tuo ambiente, con l'ascolto e il tempo che meriti. Niente traffico, niente sale d'attesa.</p>
+        <ul class="trust-list reveal">
+          <li><svg><use href="assets/icons.svg#i-check"/></svg>Dottore in Fisioterapia, 110/110</li>
+          <li><svg><use href="assets/icons.svg#i-check"/></svg>8+ anni alla Fondazione Don Gnocchi</li>
+          <li><svg><use href="assets/icons.svg#i-check"/></svg>Iscritto all'Ordine del Lazio n° 10009</li>
+        </ul>
       </div>
-      <p class="fineprint">Dott. Alessandro Ottaviani · esclusivamente a domicilio · Pigneto, San Giovanni e limitrofi.</p>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="orbit">
+          <svg class="orbit-rings" viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="190" class="ring ring-1"/>
+            <circle cx="200" cy="200" r="162" class="ring ring-2"/>
+          </svg>
+          <div class="logo-disc">
+            <img src="assets/logo.jpg" alt="" width="260" height="310">
+          </div>
+          <div class="float-chip chip-1">
+            <span class="chip-icon"><svg><use href="assets/icons.svg#i-home"/></svg></span>
+            <span><strong>Vengo io da te</strong><small>Pigneto · San Giovanni</small></span>
+          </div>
+          <div class="float-chip chip-2">
+            <span class="chip-icon"><svg><use href="assets/icons.svg#i-doc"/></svg></span>
+            <span><strong>Fattura detraibile</strong><small>per ogni seduta</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMERI -->
+  <section class="stats" aria-label="In breve">
+    <div class="container stats-grid">
+      <div class="stat reveal"><strong>8+</strong><span>anni di esperienza clinica</span></div>
+      <div class="stat reveal"><strong>110<small>/110</small></strong><span>Laurea a Tor Vergata</span></div>
+      <div class="stat reveal"><strong>100%</strong><span>a domicilio, a Roma</span></div>
+      <div class="stat reveal"><strong>0 €</strong><span>la prima consulenza telefonica</span></div>
     </div>
   </section>
 
   <!-- MISSIONE -->
   <section class="section mission">
     <div class="container">
-      <blockquote>
-        Credo in una fisioterapia fatta di ascolto reale ed empatia, dove competenza e passione lavorano insieme. Vengo da te, nel tuo ambiente, per prendermi cura del tuo corpo e del tuo benessere psico-fisico — con metodo, e con il tempo che meriti.
-      </blockquote>
-      <div class="section-cta">
-        <a href="#contatti" class="btn btn-primary">Richiedi una consulenza gratuita</a>
+      <figure class="quote reveal">
+        <svg class="quote-mark" viewBox="0 0 64 48" aria-hidden="true"><path d="M0 48V28C0 12 8 3 24 0l3 6C18 9 14 14 13 22h11v26zm36 0V28c0-16 8-25 24-28l3 6c-9 3-13 8-14 16h11v26z" fill="currentColor"/></svg>
+        <blockquote>
+          Credo in una fisioterapia fatta di <em>ascolto reale</em> ed empatia, dove competenza e passione lavorano insieme. Vengo da te, nel tuo ambiente, per prenderti cura del tuo corpo e del tuo benessere psico-fisico — con metodo, e con il tempo che meriti.
+        </blockquote>
+        <figcaption>
+          <span class="sig">Alessandro Ottaviani</span>
+          <span class="sig-role">Dottore in Fisioterapia</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PERCHÉ A DOMICILIO -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header center reveal">
+        <p class="kicker">Perché a domicilio</p>
+        <h2>La cura migliore avviene <em>dove vivi.</em></h2>
+      </div>
+      <div class="benefits-grid">
+        <article class="benefit reveal">
+          <span class="benefit-icon"><svg><use href="assets/icons.svg#i-car"/></svg></span>
+          <h3>Zero spostamenti</h3>
+          <p>Niente traffico, parcheggi o sale d'attesa. Quando hai dolore o sei in gravidanza, restare a casa fa già parte del trattamento.</p>
+        </article>
+        <article class="benefit reveal">
+          <span class="benefit-icon"><svg><use href="assets/icons.svg#i-eye"/></svg></span>
+          <h3>Il tuo ambiente reale</h3>
+          <p>Vedo come ti muovi ogni giorno, tra i tuoi spazi e le tue abitudini: è lì che nascono le soluzioni che funzionano davvero.</p>
+        </article>
+        <article class="benefit reveal">
+          <span class="benefit-icon"><svg><use href="assets/icons.svg#i-clock"/></svg></span>
+          <h3>Tempo solo per te</h3>
+          <p>Nessuna catena di montaggio: ogni seduta è dedicata interamente a te, con calma, ascolto e attenzione.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- CHI SONO -->
-  <section class="section section-alt" id="chi-sono">
+  <!-- COME FUNZIONA -->
+  <section class="section">
     <div class="container">
-      <div class="section-header">
-        <h2>Chi sono</h2>
+      <div class="section-header center reveal">
+        <p class="kicker">Come funziona</p>
+        <h2>Tre passi, <em>nessun pensiero.</em></h2>
       </div>
-      <div class="chi-sono-grid">
-        <div class="bio">
-          <p>Dietro "il fisioterapista <span class="accent-word">libero</span>" c'è Alessandro Ottaviani, nato a Roma nel dicembre del 1991. Fin da piccolo ho avuto una propensione naturale ad aiutare gli altri: correvo a soccorrere i bambini che cadevano, che si sbucciavano le ginocchia. Far star bene le persone mi riempiva l'anima.</p>
-          <p>A tredici anni mia zia, operatrice shiatsu, mi insegnò qualche piccola tecnica; quando mi disse che avevo un bellissimo tocco, non smisi più di fantasticare sulla professione che avrei fatto. Al liceo non perdevo occasione di fare un massaggio a chi aveva dolore, e ogni volta era una soddisfazione.</p>
-          <p>A diciotto anni, dopo un'estate di sacrificio sui libri, fui ammesso all'Università di Tor Vergata, dove in tre anni conseguii il titolo di Dottore in Fisioterapia. Feci un solo colloquio, al Don Gnocchi di Roma: ci sono rimasto oltre otto anni.</p>
-          <p>Durante il Covid ho capito che essere dipendente non era la mia strada, e che la fisioterapia in struttura aveva un grande limite: non permetteva di vedere il paziente nel suo ambiente reale. L'esperienza al Don Gnocchi e i tanti corsi seguiti negli anni mi hanno dato la spinta per mettermi in proprio. Oggi seguo esclusivamente pazienti privati a domicilio, e posso così dedicarmi al mio lavoro in modo sereno ed efficace.</p>
-          <p>Nel 2025 sono diventato padre di una splendida bambina, Ambra. Questa esperienza — e l'aver accompagnato mia moglie in tutti i cambiamenti della gravidanza — mi ha fatto capire quanto la fisioterapia possa essere preziosa in questi momenti delicati per il corpo e la mente della donna. È un ambito dove purtroppo circolano molta improvvisazione e abusivismo: tecniche apparentemente semplici come il massaggio o il linfodrenaggio possono fare danni se eseguite da mani inesperte. Per questo, pur restando la riabilitazione un cardine della mia professione, ho scelto di mettere la mia esperienza e la mia tecnica anche al servizio di chi è in dolce attesa e di chi vuole concedersi un momento di benessere, in sicurezza.</p>
-        </div>
-        <div class="formazione-box">
-          <h3>La mia formazione</h3>
-          <ul>
-            <li>Laurea in Fisioterapia 110/110 — Università di Roma Tor Vergata</li>
-            <li>Oltre 8 anni di esperienza clinica (Fondazione Don Gnocchi, Roma)</li>
-            <li>Linfodrenaggio manuale e decongestione del linfedema</li>
-            <li>Neurodinamica, metodo Maitland – livello 1</li>
-            <li>Applicazione del neurotaping · Riflessologia plantare · Massaggio connettivale · BLSD</li>
-            <li>Iscritto all'Ordine dei Fisioterapisti del Lazio — n° 10009</li>
-          </ul>
-        </div>
-      </div>
-      <div class="section-cta">
-        <a href="#contatti" class="btn btn-primary">Richiedi una consulenza gratuita</a>
-      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num">1</span>
+          <h3>Consulenza telefonica gratuita</h3>
+          <p>Mi racconti cosa senti e di cosa hai bisogno. Senza impegno.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">2</span>
+          <h3>Valutazione a casa tua</h3>
+          <p>Arrivo nel giorno e nell'orario che preferisci e valuto la tua situazione.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">3</span>
+          <h3>Trattamento su misura</h3>
+          <p>Un percorso costruito su di te, con tecniche sicure e verificate.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- TRATTAMENTI -->
-  <section class="section" id="trattamenti">
+  <!-- ESPLORA -->
+  <section class="section section-alt">
     <div class="container">
-      <div class="section-header">
-        <h2>I trattamenti</h2>
-        <p>Ogni trattamento si svolge comodamente a casa tua. Tutti al costo di 90 € a seduta, con fattura detraibile.</p>
+      <div class="section-header center reveal">
+        <p class="kicker">Scopri di più</p>
+        <h2>Da dove vuoi <em>iniziare?</em></h2>
       </div>
-      <div class="trattamenti-grid">
-        <article class="card">
-          <h3>Linfodrenaggio manuale in gravidanza</h3>
-          <p>Tecnica dolce e sicura per alleggerire gambe e caviglie e favorire il drenaggio dei liquidi.</p>
-          <p class="price">90 € · fattura detraibile</p>
-        </article>
-        <article class="card">
-          <h3>Massaggio decontratturante / rilassante</h3>
-          <p>Scioglie nodi e tensioni muscolari e restituisce mobilità e leggerezza.</p>
-          <p class="price">90 € · fattura detraibile</p>
-        </article>
-        <article class="card">
-          <h3>Trattamento antistress completo</h3>
-          <p>Un percorso pensato per allentare la tensione accumulata da corpo e mente.</p>
-          <p class="price">90 € · fattura detraibile</p>
-        </article>
-        <article class="card">
-          <h3>Digitopressione palmare</h3>
-          <p>Lavoro sui punti della mano per un profondo rilassamento.</p>
-          <p class="price">90 € · fattura detraibile</p>
-        </article>
-        <article class="card">
-          <h3>Digitopressione plantare</h3>
-          <p>Stimolazione dei punti del piede per benessere e distensione.</p>
-          <p class="price">90 € · fattura detraibile</p>
-        </article>
-        <article class="card">
-          <h3>Trattamento personalizzato</h3>
-          <p>Costruito su misura dopo una valutazione delle tue esigenze.</p>
-          <p class="price">90 € · fattura detraibile</p>
-        </article>
-      </div>
-      <div class="section-cta">
-        <a href="#contatti" class="btn btn-primary">Richiedi una consulenza gratuita</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATTI -->
-  <section class="section section-alt" id="contatti">
-    <div class="container">
-      <div class="section-header">
-        <h2>Prenota la tua consulenza telefonica gratuita</h2>
-        <p>Lasciami il tuo recapito: ti richiamo io, appena possibile. Nessun impegno.</p>
-      </div>
-      <div class="contatti-grid">
-        <div class="form-card">
-          <form action="https://formsubmit.co/Ilfisioterapistalibero@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="Nuova richiesta di consulenza gratuita">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://ilfisioterapistalibero.pages.dev/grazie.html">
-
-            <div class="form-field">
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="Nome" required placeholder="Il tuo nome" autocomplete="name">
-            </div>
-            <div class="form-field">
-              <label for="telefono">Telefono</label>
-              <input type="tel" id="telefono" name="Telefono" required placeholder="Il tuo numero di telefono" autocomplete="tel">
-            </div>
-            <label class="checkbox-field">
-              <input type="checkbox" required>
-              <span>Ho letto e accetto la <a href="privacy.html">privacy policy</a>.</span>
-            </label>
-            <button type="submit" class="btn btn-primary btn-block">Richiama-mi</button>
-          </form>
-          <p class="form-note">I tuoi dati sono usati solo per ricontattarti riguardo alla tua richiesta.</p>
-        </div>
-
-        <div class="contact-info">
-          <div class="whatsapp-block">
-            <h3 style="color:var(--dark-text)">Preferisci scrivere?</h3>
-            <p>Contattami direttamente su WhatsApp, ti rispondo appena possibile.</p>
-            <a href="https://wa.me/393284611118?text=Ciao%20Alessandro%2C%20vorrei%20prenotare%20una%20consulenza%20telefonica%20gratuita." class="btn btn-outline-light" target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
-          </div>
-          <ul class="contact-list">
-            <li><strong>Telefono:</strong> <a href="tel:+393284611118">328 461 1118</a></li>
-            <li><strong>Email:</strong> <a href="mailto:Ilfisioterapistalibero@gmail.com">Ilfisioterapistalibero@gmail.com</a></li>
-            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/ilfisioterapistalibero" target="_blank" rel="noopener">@ilfisioterapistalibero</a></li>
-            <li>Solo a domicilio — Roma, Pigneto e San Giovanni.</li>
-          </ul>
-        </div>
+      <div class="explore-grid">
+        <a href="chi-sono.html" class="explore-card reveal">
+          <span class="explore-icon"><svg><use href="assets/icons.svg#i-user"/></svg></span>
+          <h3>Chi sono</h3>
+          <p>La mia storia, la formazione e perché ho scelto di venire da te.</p>
+          <span class="explore-link">Conoscimi<svg><use href="assets/icons.svg#i-arrow"/></svg></span>
+        </a>
+        <a href="trattamenti.html" class="explore-card reveal">
+          <span class="explore-icon"><svg><use href="assets/icons.svg#i-leaf"/></svg></span>
+          <h3>Trattamenti</h3>
+          <p>Linfodrenaggio in gravidanza, massaggi, antistress e digitopressione.</p>
+          <span class="explore-link">Vedi i trattamenti<svg><use href="assets/icons.svg#i-arrow"/></svg></span>
+        </a>
+        <a href="contatti.html" class="explore-card explore-card-dark reveal">
+          <span class="explore-icon"><svg><use href="assets/icons.svg#i-chat"/></svg></span>
+          <h3>Contatti</h3>
+          <p>La prima consulenza telefonica è gratuita e senza impegno.</p>
+          <span class="explore-link">Parliamone<svg><use href="assets/icons.svg#i-arrow"/></svg></span>
+        </a>
       </div>
     </div>
   </section>
@@ -226,22 +225,28 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <a href="#top" class="footer-brand">
-      <img src="assets/logo.jpg" alt="Logo il fisioterapista libero">
-      <span>il fisioterapista libero</span>
-    </a>
-    <p>Dott. Alessandro Ottaviani — Dottore in Fisioterapia · Iscritto all'Ordine dei Fisioterapisti del Lazio n° 10009</p>
-    <div class="footer-bottom">
-      <a href="privacy.html">Privacy policy</a>
-      <span>&copy; <span id="year">2026</span> il fisioterapista libero</span>
+  <div class="container footer-grid">
+    <div>
+      <a href="index.html" class="footer-brand">
+        <img src="assets/logo.jpg" alt="" width="38" height="38">
+        <span>il fisioterapista <em>libero</em></span>
+      </a>
+      <p>Dott. Alessandro Ottaviani — Dottore in Fisioterapia<br>Iscritto all'Ordine dei Fisioterapisti del Lazio n° 10009</p>
     </div>
+    <nav class="footer-nav" aria-label="Pagine">
+      <a href="chi-sono.html">Chi sono</a>
+      <a href="trattamenti.html">Trattamenti</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <a href="privacy.html">Privacy policy</a>
+    <span>&copy; <span id="year">2026</span> il fisioterapista libero</span>
   </div>
 </footer>
 
-<!-- CTA sticky mobile -->
-<div class="sticky-cta">
-  <a href="#contatti" class="btn btn-primary btn-block">Consulenza gratuita</a>
+<div class="sticky-cta" id="sticky-cta">
+  <a href="contatti.html" class="btn btn-primary btn-block">Consulenza gratuita<svg class="btn-arrow"><use href="assets/icons.svg#i-arrow"/></svg></a>
 </div>
 
 <!-- Cloudflare Web Analytics: incolla qui lo snippet dopo l'attivazione dal pannello Cloudflare -->

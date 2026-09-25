@@ -4,7 +4,10 @@ Sito statico (HTML + CSS + JS vanilla, nessuna build) per "il fisioterapista lib
 
 ## Struttura
 ```
-/index.html        pagina principale
+/index.html        home
+/chi-sono.html      chi sono
+/trattamenti.html    trattamenti e prezzo
+/contatti.html      modulo di contatto
 /grazie.html        pagina di ringraziamento dopo l'invio del form
 /privacy.html        informativa privacy
 /assets/style.css    stili

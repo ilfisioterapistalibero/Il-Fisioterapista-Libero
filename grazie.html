@@ -4,33 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grazie — il fisioterapista libero</title>
-<meta name="description" content="Grazie per la tua richiesta. Ti ricontatterò al più presto.">
+<meta name="description" content="Grazie per la tua richiesta. Ti contatterò al più presto.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#F3E7D5">
 <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container header-inner">
     <a href="index.html" class="brand">
-      <img src="assets/logo.jpg" alt="Logo il fisioterapista libero">
-      <span>il fisioterapista libero</span>
+      <img src="assets/logo.jpg" alt="" width="44" height="44">
+      <span>il fisioterapista <em>libero</em></span>
     </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigazione principale">
+      <a href="chi-sono.html">Chi sono</a>
+      <a href="trattamenti.html">Trattamenti</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Apri il menu"><span></span><span></span></button>
   </div>
 </header>
 
 <main>
   <section class="simple-page centered">
     <div class="container">
-      <div class="check-icon" aria-hidden="true">✅</div>
-      <h1>Grazie!</h1>
-      <p class="subtitle">Ti ricontatto al più presto.</p>
-      <p>Nel frattempo, se preferisci, puoi scrivermi direttamente su WhatsApp.</p>
-      <div class="cta-row" style="justify-content:center;">
+      <div class="check-icon reveal" aria-hidden="true"><svg><use href="assets/icons.svg#i-check"/></svg></div>
+      <h1 class="reveal">Grazie, <em>a presto!</em></h1>
+      <p class="subtitle reveal">Ho ricevuto la tua richiesta: ti chiamo io al più presto.</p>
+      <p class="reveal">Nel frattempo, se preferisci, puoi scrivermi direttamente su WhatsApp.</p>
+      <div class="cta-row reveal">
         <a href="https://wa.me/393284611118?text=Ciao%20Alessandro%2C%20vorrei%20prenotare%20una%20consulenza%20telefonica%20gratuita." class="btn btn-primary" target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
         <a href="index.html" class="btn btn-whatsapp">Torna al sito</a>
       </div>
@@ -39,16 +47,23 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <a href="index.html" class="footer-brand">
-      <img src="assets/logo.jpg" alt="Logo il fisioterapista libero">
-      <span>il fisioterapista libero</span>
-    </a>
-    <p>Dott. Alessandro Ottaviani — Dottore in Fisioterapia · Iscritto all'Ordine dei Fisioterapisti del Lazio n° 10009</p>
-    <div class="footer-bottom">
-      <a href="privacy.html">Privacy policy</a>
-      <span>&copy; <span id="year">2026</span> il fisioterapista libero</span>
+  <div class="container footer-grid">
+    <div>
+      <a href="index.html" class="footer-brand">
+        <img src="assets/logo.jpg" alt="" width="38" height="38">
+        <span>il fisioterapista <em>libero</em></span>
+      </a>
+      <p>Dott. Alessandro Ottaviani — Dottore in Fisioterapia<br>Iscritto all'Ordine dei Fisioterapisti del Lazio n° 10009</p>
     </div>
+    <nav class="footer-nav" aria-label="Pagine">
+      <a href="chi-sono.html">Chi sono</a>
+      <a href="trattamenti.html">Trattamenti</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <a href="privacy.html">Privacy policy</a>
+    <span>&copy; <span id="year">2026</span> il fisioterapista libero</span>
   </div>
 </footer>
 

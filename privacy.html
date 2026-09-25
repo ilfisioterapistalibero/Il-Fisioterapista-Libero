@@ -5,26 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — il fisioterapista libero</title>
 <meta name="description" content="Informativa sulla privacy del sito il fisioterapista libero, ai sensi del Regolamento UE 2016/679 (GDPR).">
+<meta name="theme-color" content="#F3E7D5">
 <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container header-inner">
     <a href="index.html" class="brand">
-      <img src="assets/logo.jpg" alt="Logo il fisioterapista libero">
-      <span>il fisioterapista libero</span>
+      <img src="assets/logo.jpg" alt="" width="44" height="44">
+      <span>il fisioterapista <em>libero</em></span>
     </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigazione principale">
+      <a href="chi-sono.html">Chi sono</a>
+      <a href="trattamenti.html">Trattamenti</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Apri il menu"><span></span><span></span></button>
   </div>
 </header>
 
 <main>
-  <section class="section legal">
+  <section class="legal">
     <div class="container">
+      <p class="kicker">Informativa</p>
       <h1>Privacy Policy</h1>
       <p>Ai sensi del Regolamento UE 2016/679 (GDPR).</p>
 
@@ -58,16 +66,23 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <a href="index.html" class="footer-brand">
-      <img src="assets/logo.jpg" alt="Logo il fisioterapista libero">
-      <span>il fisioterapista libero</span>
-    </a>
-    <p>Dott. Alessandro Ottaviani — Dottore in Fisioterapia · Iscritto all'Ordine dei Fisioterapisti del Lazio n° 10009</p>
-    <div class="footer-bottom">
-      <a href="privacy.html">Privacy policy</a>
-      <span>&copy; <span id="year">2026</span> il fisioterapista libero</span>
+  <div class="container footer-grid">
+    <div>
+      <a href="index.html" class="footer-brand">
+        <img src="assets/logo.jpg" alt="" width="38" height="38">
+        <span>il fisioterapista <em>libero</em></span>
+      </a>
+      <p>Dott. Alessandro Ottaviani — Dottore in Fisioterapia<br>Iscritto all'Ordine dei Fisioterapisti del Lazio n° 10009</p>
     </div>
+    <nav class="footer-nav" aria-label="Pagine">
+      <a href="chi-sono.html">Chi sono</a>
+      <a href="trattamenti.html">Trattamenti</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <a href="privacy.html">Privacy policy</a>
+    <span>&copy; <span id="year">2026</span> il fisioterapista libero</span>
   </div>
 </footer>
 
