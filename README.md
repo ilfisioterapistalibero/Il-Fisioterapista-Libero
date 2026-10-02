@@ -50,3 +50,9 @@ Questo README riprende i passi già seguiti/da seguire con Claude Code in sessio
 - Apri il sito online e prova a inviare il form di test (una volta, per attivare FormSubmit).
 - Controlla che il bottone WhatsApp apra una chat precompilata.
 - Controlla su smartphone che la barra "Consulenza gratuita" resti visibile in basso durante lo scroll.
+
+## Note tecniche (SEO e velocità)
+- Quando si modifica `assets/style.css` o `assets/script.js`, aggiornare il numero `?v=` nei link di **tutte** le pagine HTML, così i browser scaricano la versione nuova.
+- I font sono nella cartella `assets/fonts/` (niente Google Fonts). Le regole di cache sono in `_headers`.
+- Non rimuovere: il meta tag `google-site-verification` in `index.html` (verifica Search Console) e il file `.txt` di IndexNow nella cartella principale.
+- `sitemap.xml` e `robots.txt` sono nella cartella principale; `404.html` è la pagina "non trovata".
