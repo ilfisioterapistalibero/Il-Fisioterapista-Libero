@@ -56,3 +56,4 @@ Questo README riprende i passi già seguiti/da seguire con Claude Code in sessio
 - I font sono nella cartella `assets/fonts/` (niente Google Fonts). Le regole di cache sono in `_headers`.
 - Non rimuovere: i meta tag `google-site-verification` (Search Console) e `msvalidate.01` (Bing Webmaster Tools) in `index.html` e il file `.txt` di IndexNow nella cartella principale.
 - `sitemap.xml` e `robots.txt` sono nella cartella principale; `404.html` è la pagina "non trovata".
+- `_redirects` nasconde dal sito i file interni (BRIEF, README): restano su GitHub. Se si aggiungono altri documenti interni nella cartella, aggiungerli lì.
