@@ -1,4 +1,22 @@
+# Benvenuti motori di ricerca e assistenti AI: tutto il sito è consultabile.
 User-agent: *
+Allow: /
+
+# Assistenti e motori di ricerca AI (accesso esplicitamente consentito)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
 Allow: /
 
 Sitemap: https://ilfisioterapistalibero.pages.dev/sitemap.xml
