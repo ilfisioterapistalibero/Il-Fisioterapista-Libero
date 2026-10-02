@@ -54,5 +54,5 @@ Questo README riprende i passi già seguiti/da seguire con Claude Code in sessio
 ## Note tecniche (SEO e velocità)
 - Quando si modifica `assets/style.css` o `assets/script.js`, aggiornare il numero `?v=` nei link di **tutte** le pagine HTML, così i browser scaricano la versione nuova.
 - I font sono nella cartella `assets/fonts/` (niente Google Fonts). Le regole di cache sono in `_headers`.
-- Non rimuovere: il meta tag `google-site-verification` in `index.html` (verifica Search Console) e il file `.txt` di IndexNow nella cartella principale.
+- Non rimuovere: i meta tag `google-site-verification` (Search Console) e `msvalidate.01` (Bing Webmaster Tools) in `index.html` e il file `.txt` di IndexNow nella cartella principale.
 - `sitemap.xml` e `robots.txt` sono nella cartella principale; `404.html` è la pagina "non trovata".
