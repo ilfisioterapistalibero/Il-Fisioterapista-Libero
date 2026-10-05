@@ -821,6 +821,23 @@ p { margin: 0 0 1em; }
 .price-amount { font-size: 2.6rem; font-weight: 500; color: var(--accent-ink); line-height: 1; }
 .price-note { font-size: 0.88rem; line-height: 1.4; color: var(--muted); border-left: 1px solid var(--line); padding-left: 18px; }
 
+.hero-note {
+  max-width: 22em;
+  margin: 0;
+  padding: 20px 26px;
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  border-left: 3px solid var(--accent);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--title);
+  justify-self: start;
+}
+.price-info { text-align: center; margin: 40px auto 18px; color: var(--muted); font-size: 0.98rem; }
+.price-info strong { color: var(--title); font-weight: 600; }
+.price-info + .treat-cta { margin-top: 0; }
+
 /* ---------- chi sono ---------- */
 .about-grid { display: grid; gap: 48px; align-items: start; }
 @media (min-width: 960px) {
