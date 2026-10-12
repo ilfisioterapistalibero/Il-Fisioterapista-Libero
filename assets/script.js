@@ -1,4 +1,4 @@
-// il fisioterapista libero — script.js
+// Il Fisioterapista Libero — script.js
 (function () {
   var root = document.documentElement;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

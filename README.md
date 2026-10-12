@@ -1,6 +1,6 @@
-# il fisioterapista libero — sito web
+# Il Fisioterapista Libero — sito web
 
-Sito statico (HTML + CSS + JS vanilla, nessuna build) per "il fisioterapista libero" — Dott. Alessandro Ottaviani.
+Sito statico (HTML + CSS + JS vanilla, nessuna build) per "Il Fisioterapista Libero" — Dott. Alessandro Ottaviani.
 
 ## Struttura
 ```
