@@ -62,8 +62,8 @@
     }
     function droplet(t) {
       var o = ctx.createOscillator(), g = ctx.createGain();
-      var big = Math.random() < 0.25;
-      var f0 = big ? rnd(240, 420) : rnd(420, 900);
+      var big = Math.random() < 0.06;
+      var f0 = big ? rnd(320, 480) : rnd(520, 950);
       var dur = big ? rnd(0.06, 0.11) : rnd(0.025, 0.055);
       var vol = big ? rnd(0.005, 0.011) : rnd(0.002, 0.007);
       o.type = 'sine';
@@ -84,7 +84,7 @@
       while (next < horizon) {
         droplet(next);
         // densità che ondeggia piano: la corrente non è mai uguale a se stessa
-        var rate = 20 + 6 * Math.sin(ctx.currentTime * 0.09) + 3 * Math.sin(ctx.currentTime * 0.23);
+        var rate = 6 + 2 * Math.sin(ctx.currentTime * 0.09) + 1 * Math.sin(ctx.currentTime * 0.23);
         next += -Math.log(1 - Math.random()) / rate;
       }
       waterTimer = setTimeout(schedule, 60);
@@ -223,14 +223,6 @@
     if (!el || el.closest('.tflip') || el.classList.contains('sound-toggle')) return; // le carte e l'interruttore hanno già il loro suono
     lastUiTap = performance.now();
     tap(false);
-    // link interni: si aspetta un attimo, così la bolla si sente prima di cambiare pagina
-    if (el.tagName === 'A' && enabled && ctx && !el.target && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
-      var href = el.getAttribute('href') || '';
-      if (href && href.charAt(0) !== '#' && el.origin === location.origin && !/^(mailto|tel):/i.test(href)) {
-        e.preventDefault();
-        setTimeout(function () { location.href = el.href; }, 120);
-      }
-    }
   });
 
   window.flSound = { tap: tap };
