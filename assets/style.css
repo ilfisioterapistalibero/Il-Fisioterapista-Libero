@@ -1184,7 +1184,7 @@ p { margin: 0 0 1em; }
   text-decoration: none;
 }
 .form-alt a:hover { color: var(--accent-ink); }
-.form-alt svg { width: 20px; height: 20px; color: #25A244; }
+.form-alt svg { width: 20px; height: 20px; color: var(--accent-ink); }
 
 /* ---------- footer ---------- */
 .site-footer {
@@ -1250,7 +1250,7 @@ p { margin: 0 0 1em; }
   align-items: center;
   padding: 72px 0;
 }
-.simple-page .container { max-width: 760px; }
+.simple-page .container { max-width: 760px; width: 100%; }
 .simple-page.centered { text-align: center; }
 .simple-page .subtitle { font-size: 1.2rem; color: var(--title); }
 .simple-page .cta-row { justify-content: center; }
@@ -1716,6 +1716,320 @@ h1.split.is-visible .w > span { transform: none; }
   .ico .lotus-c, .ico .lotus-m, .ico .lotus-o { animation: none !important; }
   .ico .ripple { animation: none !important; opacity: 0.5; }
   .btn-shine::after { display: none; }
+}
+
+/* ===========================================================
+   LETTURA VELOCE (novembre 2026): grassetti, evidenziatore,
+   bottoni WhatsApp, fascia di contrasto, schede che si girano
+   =========================================================== */
+
+/* grassetti ben visibili */
+main p strong, main li strong { color: var(--title); font-weight: 650; }
+.fcard p strong { color: #FFF6EA; font-weight: 600; }
+.step p strong { color: var(--accent-ink); }
+.trust-list li > span { line-height: 1.35; }
+.trust-list strong { font-weight: 700; }
+.page-lead strong, .hero-note strong { color: var(--accent-ink); font-weight: 700; }
+
+/* evidenziatore terracotta sotto le parole chiave */
+.hl {
+  background: linear-gradient(transparent 58%, rgba(198, 120, 80, 0.3) 58%, rgba(198, 120, 80, 0.3) 92%, transparent 92%);
+  color: var(--title);
+  font-weight: 600;
+  padding: 0 0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* hero più incisivo */
+.hero .subtitle { font-size: clamp(1.15rem, 2.2vw, 1.32rem); line-height: 1.55; max-width: 30em; margin-bottom: 26px; }
+.hero .subtitle strong { color: var(--accent-ink); font-weight: 700; }
+/* bottoni affiancati sempre della stessa larghezza */
+.hero-cta { display: grid; grid-template-columns: 1fr; gap: 12px; max-width: 400px; }
+.hero-cta .btn { width: 100%; padding-left: 22px; padding-right: 22px; }
+.cta-band .hero-cta { margin: 0 auto; max-width: 400px; }
+@media (min-width: 820px) {
+  .cta-band .hero-cta { grid-template-columns: 1fr 1fr; max-width: 720px; }
+}
+.hero-micro { margin: 14px 0 28px; font-size: 0.9rem; color: var(--muted); max-width: 400px; text-align: center; }
+
+/* box finale dei trattamenti: centrato, con i due bottoni uguali */
+.treat-cta { flex-direction: column; justify-content: center; text-align: center; gap: 0; padding: clamp(32px, 5vw, 48px) clamp(20px, 4vw, 40px); }
+.treat-cta .treat-cta-sub { margin-bottom: 24px !important; }
+.treat-cta .hero-cta { width: 100%; margin: 0 auto; }
+@media (min-width: 820px) { .treat-cta .hero-cta { grid-template-columns: 1fr 1fr; max-width: 720px; } }
+@media (max-width: 560px) { .treat-cta { padding-left: 14px; padding-right: 14px; } .treat-cta .btn { white-space: nowrap; padding-left: 16px; padding-right: 16px; } }
+@media (max-width: 370px) { .hero-cta .btn { font-size: 0.94rem; } }
+/* testata delle pagine interne: i due blocchi allineati al centro */
+.page-hero-split { align-items: center; }
+
+/* menu: un po' più di respiro sugli schermi medi */
+@media (min-width: 861px) and (max-width: 1040px) { .main-nav { gap: 22px; } }
+
+/* le schede si restringono anche sui telefoni più stretti */
+.treat-grid > .tflip { min-width: 0; }
+.tcard-front-body h2 { min-width: 0; }
+/* davanti: l'immagine si allunga per riempire, nome e "Scopri" restano compatti in basso */
+.tface.front .tcard-visual { flex: 1 1 auto; height: auto; min-height: 210px; }
+.tface.front .tcard-front-body { flex: 0 0 auto; }
+@media (max-width: 420px) {
+  .tface.front .tcard-front-body { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 14px; padding: 22px 22px 24px; }
+}
+@media (max-width: 360px) {
+  .btn-arrow { display: none; }
+  .brand { font-size: 1rem; gap: 9px; }
+  .brand img { width: 38px; height: 38px; }
+}
+@media (max-width: 860px) {
+  .main-nav .nav-cta { max-width: 100%; white-space: normal; text-align: center; }
+}
+
+/* righe di bottoni nelle pagine semplici: su telefono uno sotto l'altro, stessa larghezza */
+@media (max-width: 600px) {
+  .cta-row { display: grid; grid-template-columns: 1fr; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .cta-row .btn { width: 100%; padding-left: 18px; padding-right: 18px; }
+}
+
+/* interruttore del sottofondo sonoro */
+.sound-toggle {
+  position: fixed;
+  left: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: 95;
+  width: 46px; height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--paper);
+  color: var(--accent-ink);
+  box-shadow: var(--shadow), inset 0 0 0 1.5px rgba(198, 120, 80, 0.3);
+  transition: transform 0.35s var(--ease), background-color 0.3s ease, color 0.3s ease;
+}
+.sound-toggle:hover { transform: translateY(-2px); background: var(--accent-deep); color: #fff; }
+.sound-toggle:focus-visible { outline: 3px solid var(--accent2); outline-offset: 3px; }
+.sound-toggle svg { width: 22px; height: 22px; }
+.sound-toggle .snd-off { display: none; }
+.sound-toggle.is-off .snd-on { display: none; }
+.sound-toggle.is-off .snd-off { display: block; }
+.sound-toggle.is-off { color: var(--muted); }
+/* su telefono sta sopra la barra fissa della consulenza */
+@media (max-width: 860px) {
+  .sound-toggle { left: 12px; bottom: calc(84px + env(safe-area-inset-bottom)); width: 42px; height: 42px; }
+}
+
+/* niente parole orfane: righe bilanciate nei titoli e nelle frasi in evidenza */
+h1, h2, h3, .quote blockquote, .cta-band-title, .bio .lead, .pull, .treat-cta-title, .page-lead { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+/* bottone WhatsApp: identico al bottone della consulenza (terracotta, testo bianco) */
+.btn-wa {
+  background: var(--accent-deep);
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset, 0 10px 24px -8px rgba(168, 95, 59, 0.6);
+}
+.btn-wa:hover {
+  background: var(--accent-deeper);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset, 0 16px 32px -10px rgba(168, 95, 59, 0.7);
+}
+.btn-wa:active { transform: translateY(0) scale(0.98); }
+.wa-ico { width: 22px; height: 22px; flex: none; }
+
+/* nel modulo dei contatti il bottone WhatsApp va sotto la domanda */
+.form-alt { flex-direction: column; gap: 12px; }
+.form-alt .btn { color: #fff; }
+.form-alt .btn svg { color: currentColor; width: 22px; height: 22px; }
+.form-alt .btn:hover { color: #fff; }
+
+/* citazione: frase breve, più grande */
+.quote blockquote { font-size: clamp(1.5rem, 3.6vw, 2.2rem); }
+
+/* fascia scura di contrasto con l'invito */
+.cta-band {
+  position: relative;
+  overflow: hidden; overflow: clip;
+  background-color: var(--dark-bg) !important;
+  color: var(--dark-text);
+  padding: clamp(64px, 9vw, 104px) 0;
+  text-align: center;
+}
+.cta-band::before {
+  content: "";
+  position: absolute;
+  width: 560px; height: 560px;
+  left: 50%; top: -320px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 120, 80, 0.38), transparent 66%);
+  pointer-events: none;
+}
+.cta-band-inner { position: relative; }
+.cta-band-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 32;
+  font-size: clamp(1.9rem, 4.6vw, 2.9rem);
+  line-height: 1.12;
+  color: #FBF3E9;
+  margin: 0 0 14px;
+}
+.cta-band-title em { font-style: italic; color: var(--accent2-ink); }
+.cta-band-sub { font-size: 1.1rem; color: rgba(243, 231, 213, 0.82); margin: 0 0 30px; }
+.cta-band-sub strong { color: #FBF3E9 !important; }
+.cta-band .hero-cta { justify-content: center; }
+
+/* ---------- chi sono: lettura a colpo d'occhio ---------- */
+.facts {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+@media (min-width: 640px) { .facts { grid-template-columns: repeat(2, 1fr); } }
+.facts li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+.facts svg {
+  flex: none;
+  width: 24px; height: 24px;
+  padding: 4px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--accent-deep);
+  color: #fff;
+}
+.facts strong { display: block; color: var(--title); font-weight: 700; }
+.facts li > span { color: var(--muted); font-size: 0.92rem; }
+.facts li > span strong { font-size: 1rem; }
+.bio .lead strong { font-weight: 600; color: var(--accent-ink); }
+.bio p { font-size: 1.06rem; }
+.bio-h { display: flex; align-items: center; gap: 12px; }
+.bio-h::before { content: ""; width: 28px; height: 2px; background: var(--accent); flex: none; }
+
+/* ---------- contatti: WhatsApp in evidenza ---------- */
+.wa-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 30px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: rgba(243, 231, 213, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(243, 231, 213, 0.14);
+  max-width: 30em;
+}
+.wa-box .btn { width: 100%; white-space: normal; }
+.wa-box p { margin: 0; font-size: 0.93rem; color: rgba(243, 231, 213, 0.78); text-align: center; }
+.wa-box p strong { color: var(--dark-text); }
+
+/* ---------- trattamenti: schede che si girano al tocco ---------- */
+.tflip {
+  display: block;
+  perspective: 1400px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--radius-lg);
+}
+.tflip:focus-visible { outline: 3px solid var(--accent2); outline-offset: 4px; }
+.tflip-in {
+  display: grid;
+  height: 100%;
+  transition: transform 0.85s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.tflip.on .tflip-in { transform: rotateY(180deg); }
+.tflip .tface {
+  grid-area: 1 / 1;
+  display: flex;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.tflip .tface.back { transform: rotateY(180deg); }
+.tflip .tcard { height: 100%; }
+.tflip:hover .tcard { transform: none; }
+.tflip:hover .tface.front .tcard { box-shadow: 0 2px 6px rgba(60, 48, 38, 0.06), 0 32px 60px -26px rgba(60, 48, 38, 0.55); }
+.tcard-front-body { padding: 22px 26px 24px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex: 1; }
+.tcard-front-body h2 { font-size: 1.3rem; font-weight: 600; line-height: 1.2; margin: 0; }
+.tmore {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px 10px 18px;
+  border-radius: 999px;
+  background: var(--accent-deep);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px -8px rgba(168, 95, 59, 0.7);
+  transition: background-color 0.3s ease, transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.tmore svg { width: 16px; height: 16px; transition: transform 0.35s var(--ease); }
+.tflip:hover .tmore { background: var(--accent-deeper); transform: translateY(-1px); box-shadow: 0 12px 22px -8px rgba(168, 95, 59, 0.8); }
+.tflip:hover .tmore svg { transform: translateX(3px); }
+/* invito discreto: la freccia "bussa" ogni tanto finché non si tocca la scheda */
+.js .tflip:not(.on) .tmore svg { animation: nudge-more 3.2s ease-in-out 1.5s infinite; }
+@keyframes nudge-more { 0%, 70%, 100% { transform: none; } 78% { transform: translateX(4px); } 86% { transform: none; } 92% { transform: translateX(3px); } }
+
+.tface.back .tcard {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 30px 28px 26px;
+  background-color: #3C3026;
+  background-image: var(--tone);
+  color: rgba(243, 231, 213, 0.88);
+}
+.tface.back .tcard::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 320px; height: 320px;
+  right: -120px; top: -150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow), transparent 68%);
+}
+.tface.back .tback-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 32;
+  color: #FBF3E9;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  flex-grow: 0;
+}
+.tface.back p { margin: 0 0 18px; font-size: 1.04rem; line-height: 1.55; flex-grow: 1; }
+.tface.back p strong { color: #FFF6EA; font-weight: 650; }
+.tface.back .tags span { background: rgba(243, 231, 213, 0.12); color: #FBF3E9; }
+.tback-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(243, 231, 213, 0.14); font-size: 0.9rem; }
+.tback-foot strong { color: var(--ink, #E4BC84); font-weight: 700; font-size: 1.02rem; }
+.tback-close { display: inline-flex; align-items: center; gap: 6px; color: rgba(243, 231, 213, 0.75); font-weight: 600; }
+.tback-close svg { width: 15px; height: 15px; transform: scaleX(-1); }
+.treat-tap { text-align: center; color: var(--muted); font-size: 0.95rem; margin: -8px 0 26px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tflip .tface { transition: opacity 0.01ms; }
+  .tflip.on .tflip-in { transform: none; }
+  .tflip.on .tface.front { opacity: 0; }
+  .tflip:not(.on) .tface.back { opacity: 0; }
+  .tflip .tface.back { transform: none; }
 }
 
 /* utility */

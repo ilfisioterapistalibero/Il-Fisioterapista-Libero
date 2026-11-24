@@ -240,3 +240,27 @@
     });
   });
 })();
+
+// ---------- trattamenti: schede che si girano al tocco ----------
+(function () {
+  document.querySelectorAll('.tflip').forEach(function (card) {
+    var front = card.querySelector('.tface.front');
+    var back = card.querySelector('.tface.back');
+    var set = function (on) {
+      card.classList.toggle('on', on);
+      card.setAttribute('aria-pressed', String(on));
+      if (back) back.setAttribute('aria-hidden', String(!on));
+      if (front) front.setAttribute('aria-hidden', String(on));
+    };
+    set(false);
+    var flip = function () {
+      var on = !card.classList.contains('on');
+      set(on);
+      if (window.flSound) window.flSound.tap(!on);
+    };
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+    });
+  });
+})();
